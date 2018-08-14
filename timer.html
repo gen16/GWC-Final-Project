@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+What are you doing? <input id = "event" type = "text">
+<br>
+How much time (in minutes) are you planning on spending on it? <input id = "time" type = "text">
+<br>
+<button onclick="timer()">Submit</button>
+
+<p id = "list"></p>
+
+<script>
+var inputs = [];
+document.getElementById("list").innerHTML = inputs;
+
+function timer() {
+
+    var inputTime = document.getElementById("time").value;
+    var inputEvent = document.getElementById('event').value;
+    var convertedTime = inputTime * 60000;
+    document.getElementById("event").value = "";
+    document.getElementById("time").value = "";
+    setTimeout(function(){ alert(inputTime + " minutes have passed!" ); }, convertedTime);
+    document.getElementById("list").innerHTML = "";
+
+    inputs.push("<br>" + inputEvent + " : " + inputTime);
+    document.getElementById("list").innerHTML = inputs;
+
+
+    /*
+    document.getElementById("list").innerHTML = existing + inputEvent + " : " + inputTime;
+    */
+
+    /*var text = document.getElementById("idea").value;*/ //.value gets input values
+
+    //Now construct a quick list element
+
+    //Now use appendChild and add it to the list!
+    /*document.getElementById("list").appendChild(li);
+    for(var i = 0; i < inputs.length; i++) {
+      document.write(inputs[i]);
+    }*/
+}
+
+
+
+
+</script>
+</body>
+</html>

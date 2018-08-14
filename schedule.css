@@ -1,0 +1,209 @@
+table {
+  border: 1px solid black;
+  table-layout: fixed;
+  width: 40%;
+  text-align: center;
+  font-size: 22px;
+}
+th {
+  border: 1px solid black;
+  padding: 15px;
+  width: 100%;
+}
+td.time{
+  border: 1px solid black;
+  padding: 15px;
+  width: 500px;
+}
+td.ec {
+  border: 1px solid black;
+  padding: 15px;
+  width: 500px;
+}
+button.right{
+  border-radius: 0px
+}
+
+button.left{
+  border-radius: 0px
+}
+button {
+  background-color: #7aa1a8;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 15px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 400px;
+  white-space: nowrap;
+}
+button:hover {
+  text-overflow: inherit;
+  overflow: visible;
+  box-shadow: 5px 5px 10px 10px black;
+  background-color: #7e699b;
+}
+
+body{
+  color: white;
+  background-color: dimgray;]
+
+}
+.days {display:none}
+.leftbutton, .rightbutton, .bottombadge {cursor:pointer}
+
+div.intro{
+  background-color: dimgray;
+  animation-name: introan;
+  animation-duration: 15s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes introan {
+  0% {top: -10px; opacity: 1;}
+  50% {top:0px; opacity: 1;}
+  100% {top:10px; opacity: 0; display: none;}
+}
+
+@-webkit-keyframes introan {
+  0% {top: 0px; opacity: 1;}
+  25% {top:.000001px; opacity: 1;}
+  50% {top:.000002px; opacity: 1;}
+  75% {top:.00003px; opacity: 1;}
+  100% {top:.00004px; opacity: 0; display:none;}
+}
+h1{
+  font-size: 250px;
+}
+h2{
+  font-size: 32px;
+}
+
+
+
+/*Made by Erik Terwan* MIT License*/
+
+a
+{
+  text-decoration: none;
+  color: #232323;
+  font-size: 32px;
+  transition: color 0.3s ease;
+}
+a:hover
+{
+  color: #990000;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 48px;
+  height: 100px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+#menuToggle span /** Just a quick hamburger*/
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*Transform all the slices of hamburger* into a crossmark.*/
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*But let's hide the middle one.*/
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*Ohyeah and the last one should go the other direction*/
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*Make this absolute positioned at the top left of the screen*/
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 48px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+img{
+  z-index: 2;
+}
